@@ -11,7 +11,7 @@ import {
   AppNotification,
 } from '@/types';
 
-export class NexusBridgeDatabase extends Dexie {
+export class NirmaanDatabase extends Dexie {
   students!: Table<StudentProfile, string>;
   jobs!: Table<JobOpportunity, string>;
   applications!: Table<Application, string>;
@@ -23,7 +23,7 @@ export class NexusBridgeDatabase extends Dexie {
   notifications!: Table<AppNotification, string>;
 
   constructor() {
-    super('NexusBridgeDB');
+    super('NirmaanDB');
     this.version(1).stores({
       students: 'id, rollNo, email, batch',
       jobs: 'id, company, roleType, industrySector, postedDate',
@@ -38,7 +38,7 @@ export class NexusBridgeDatabase extends Dexie {
   }
 }
 
-export const db = new NexusBridgeDatabase();
+export const db = new NirmaanDatabase();
 
 // Default seed data
 export const INITIAL_STUDENT: StudentProfile = {
@@ -518,7 +518,7 @@ export async function initSeedData() {
       await db.facultyPrograms.bulkPut(INITIAL_FACULTY_PROGRAMS);
       await db.mentorshipRecords.bulkPut(INITIAL_MENTORSHIPS);
       await db.notifications.bulkPut(INITIAL_NOTIFICATIONS);
-      console.log('✅ NexusBridge IndexedDB successfully seeded with initial demo data.');
+      console.log('✅ Nirmaan IndexedDB successfully seeded with initial demo data.');
     }
   } catch (error) {
     console.error('Error seeding IndexedDB:', error);

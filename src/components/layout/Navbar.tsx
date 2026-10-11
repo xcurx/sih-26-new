@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { useApp } from '@/context/AppContext';
 import { UserRole } from '@/types';
+import NirmaanLogo from '@/components/common/NirmaanLogo';
 
 export default function Navbar() {
   const {
@@ -54,18 +55,8 @@ export default function Navbar() {
       <div className="w-full max-w-[1440px] mx-auto px-margin-sm lg:px-margin-lg h-full flex items-center justify-between gap-space-md">
         {/* Logo & Brand */}
         <div className="flex items-center gap-space-lg flex-1">
-          <Link href={`/${role}/dashboard`} className="flex items-center gap-space-sm shrink-0 group">
-            <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm group-hover:bg-primary-container transition-colors">
-              <span className="material-symbols-outlined text-[22px]">hub</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-headline-sm text-headline-sm text-primary tracking-tight font-bold">
-                NexusBridge
-              </span>
-              <span className="font-label-sm text-[10px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                Academia-Industry Portal
-              </span>
-            </div>
+          <Link href={`/${role}/dashboard`} className="flex items-center shrink-0 group">
+            <NirmaanLogo size="sm" subtitleText="Synergy Portal" />
           </Link>
 
           {/* Global Search Bar */}

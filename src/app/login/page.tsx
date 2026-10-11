@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
 import { UserRole } from '@/types';
+import NirmaanLogo from '@/components/common/NirmaanLogo';
 
 export default function LoginPage() {
   const { login } = useApp();
@@ -151,18 +152,8 @@ export default function LoginPage() {
       {/* Top Header */}
       <header className="w-full bg-surface-container-lowest border-b border-surface-container">
         <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
-          <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm group-hover:bg-primary-container transition-colors">
-              <span className="material-symbols-outlined text-[24px]">hub</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-headline-sm text-lg text-primary font-bold tracking-tight">
-                NexusBridge
-              </span>
-              <span className="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                Academia-Industry Collaboration Portal
-              </span>
-            </div>
+          <Link href="/" className="flex items-center shrink-0 group">
+            <NirmaanLogo size="md" />
           </Link>
 
           <Link
@@ -183,7 +174,7 @@ export default function LoginPage() {
             Single Sign-On &amp; Role-Based Authorization
           </span>
           <h1 className="font-headline-lg text-3xl sm:text-4xl font-bold text-on-surface tracking-tight">
-            Sign In to NexusBridge
+            Sign In to Nirmaan
           </h1>
           <p className="text-xs sm:text-sm text-on-surface-variant max-w-xl leading-relaxed">
             Choose a demo account below for instantaneous access to verified candidate portfolios, recruiter ATS workflows, or academic governance.
@@ -332,7 +323,7 @@ export default function LoginPage() {
 
       {/* Footer */}
       <footer className="w-full bg-surface-container-lowest border-t border-surface-container py-4 text-center text-xs text-on-surface-variant">
-        <span>NexusBridge • Role-Based Security &amp; Local IndexedDB Storage Engine</span>
+        <span>Nirmaan • Role-Based Security &amp; Local IndexedDB Storage Engine</span>
       </footer>
     </div>
   );

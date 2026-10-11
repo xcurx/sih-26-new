@@ -76,7 +76,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   // Read saved session
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const savedAuth = localStorage.getItem('nexus_auth') as UserRole | null;
+      const savedAuth = (localStorage.getItem('nirmaan_auth') || localStorage.getItem('nexus_auth')) as UserRole | null;
       if (savedAuth) {
         setIsAuthenticated(true);
         setRoleState(savedAuth);
@@ -101,7 +101,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
     setIsAuthenticated(true);
     setRoleState(targetRole);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('nexus_auth', targetRole);
+      localStorage.setItem('nirmaan_auth', targetRole);
     }
     router.push(`/${targetRole}/dashboard`);
   };
@@ -109,6 +109,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const logout = () => {
     setIsAuthenticated(false);
     if (typeof window !== 'undefined') {
+      localStorage.removeItem('nirmaan_auth');
       localStorage.removeItem('nexus_auth');
     }
     router.push('/login');
@@ -117,7 +118,7 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   const setRole = (newRole: UserRole) => {
     setRoleState(newRole);
     if (typeof window !== 'undefined') {
-      localStorage.setItem('nexus_auth', newRole);
+      localStorage.setItem('nirmaan_auth', newRole);
     }
     if (newRole === 'student') router.push('/student/dashboard');
     else if (newRole === 'industry') router.push('/industry/dashboard');

@@ -16,8 +16,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'NexusBridge | Academia-Industry Synergy Portal',
-  description: 'Centralized Academia-Industry Collaboration Platform for Skill Mapping, Internships, Research & Placements.',
+  title: 'Nirmaan | Academia-Industry Synergy Portal',
+  description: 'National Portal for Academia-Industry Collaboration, Skill Mapping, Internships & Placements.',
 };
 
 export default function RootLayout({

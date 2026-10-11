@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { useApp } from '@/context/AppContext';
+import NirmaanLogo from '@/components/common/NirmaanLogo';
 
 export default function HomePage() {
   const router = useRouter();
@@ -18,18 +19,8 @@ export default function HomePage() {
       {/* Top Simple Brand Header */}
       <header className="w-full bg-surface-container-lowest border-b border-surface-container">
         <div className="max-w-[1440px] mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm">
-              <span className="material-symbols-outlined text-[24px]">hub</span>
-            </div>
-            <div className="flex flex-col">
-              <span className="font-headline-sm text-lg text-primary font-bold tracking-tight">
-                NexusBridge
-              </span>
-              <span className="text-[11px] text-on-surface-variant uppercase tracking-wider font-semibold">
-                Academia-Industry Collaboration Portal
-              </span>
-            </div>
+          <div className="flex items-center shrink-0">
+            <NirmaanLogo size="md" />
           </div>
 
           <div className="flex items-center gap-3">
@@ -153,7 +144,7 @@ export default function HomePage() {
 
       {/* Footer */}
       <footer className="w-full bg-surface-container-lowest border-t border-surface-container py-4 text-center text-xs text-on-surface-variant">
-        <span>Powered by NexusBridge • Local IndexedDB Cache Engine Active • Exact Stitch Design System</span>
+        <span>Powered by Nirmaan • Local IndexedDB Cache Engine Active • Exact Stitch Design System</span>
       </footer>
     </div>
   );
